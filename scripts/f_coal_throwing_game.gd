@@ -24,7 +24,7 @@ func _process(delta):
 func _input(event):
 	# Handle input events
 	if event is InputEventMouseButton:
-		if event.button_index == "BUTTON_LEFT":
+		if event.button_index == 0:
 			if event.is_pressed():
 				is_charging = true
 			else:
