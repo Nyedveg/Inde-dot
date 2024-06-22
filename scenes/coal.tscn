@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwgifrpiwcpmo"]
+
+[ext_resource type="Script" path="res://scripts/coal.gd" id="1_n33ij"]
+[ext_resource type="Texture2D" uid="uid://l0kbtiv50wbv" path="res://textures/Coal Sprite.png" id="2_2rc41"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kbh4"]
+radius = 30.1496
+
+[node name="Coal" type="RigidBody2D"]
+collision_layer = 0
+script = ExtResource("1_n33ij")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4kbh4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_2rc41")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
