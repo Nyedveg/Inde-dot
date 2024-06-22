@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://caksgugdxaoab"]
+[gd_scene load_steps=7 format=3 uid="uid://caksgugdxaoab"]
 
 [ext_resource type="Texture2D" uid="uid://g6x74n4o48lu" path="res://UI/Logo_Complete.png" id="1_1ye5t"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_k1at6"]
@@ -172,6 +172,7 @@ uri = "https://www.linkedin.com/in/martynas-garlauskas-5127692b0/"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_u4kc3")
+autoplay = true
+
 [connection signal="pressed" from="UI/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="UI/ExitButton" to="." method="_on_exit_button_pressed"]
-
