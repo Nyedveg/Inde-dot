@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bulurtr5a75gs"]
+
+[ext_resource type="Script" path="res://scripts/a_forming_game.gd" id="1_kjh7p"]
+[ext_resource type="PackedScene" uid="uid://d5bf86htk3d0" path="res://scenes/spot_to_hit.tscn" id="2_ym1ap"]
+
+[sub_resource type="Curve2D" id="Curve2D_63uoi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 576, 320, 0, 0, 0, 0, 1344, 320, 0, 0, 0, 0, 1344, 384, 0, 0, 0, 0, 576, 384, 0, 0, 0, 0, 576, 448, 0, 0, 0, 0, 1344, 448, 0, 0, 0, 0, 1344, 512, 0, 0, 0, 0, 576, 512, 0, 0, 0, 0, 576, 576, 0, 0, 0, 0, 1344, 576, 0, 0, 0, 0, 1344, 512, 0, 0, 0, 0, 576, 512, 0, 0, 0, 0, 576, 448, 0, 0, 0, 0, 1344, 448, 0, 0, 0, 0, 1344, 384, 0, 0, 0, 0, 576, 384, 0, 0, 0, 0, 576, 320)
+}
+point_count = 17
+
+[node name="AFormingGame" type="Node"]
+script = ExtResource("1_kjh7p")
+spot_scene = ExtResource("2_ym1ap")
+
+[node name="SpotFormationPath" type="Path2D" parent="."]
+position = Vector2(0, 64)
+curve = SubResource("Curve2D_63uoi")
+
+[node name="SpotLocation" type="PathFollow2D" parent="SpotFormationPath"]
+position = Vector2(576, 320)
+
+[node name="IronIngot" type="Sprite2D" parent="SpotFormationPath"]
+position = Vector2(960, 448)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="WinTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 810.0
+offset_top = 461.0
+offset_right = 1075.0
+offset_bottom = 657.0
+theme_override_font_sizes/font_size = 40
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="WinTimer" to="." method="_on_win_timer_timeout"]

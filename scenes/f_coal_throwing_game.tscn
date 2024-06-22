@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://clfbciew27jue"]
+[gd_scene load_steps=6 format=3 uid="uid://daxk3182akb3a"]
 
 [ext_resource type="Script" path="res://scripts/f_coal_throwing_game.gd" id="1_k85fr"]
-[ext_resource type="PackedScene" path="res://scenes/coal.tscn" id="2_n4jxd"]
+[ext_resource type="PackedScene" uid="uid://cwgifrpiwcpmo" path="res://scenes/coal.tscn" id="2_n4jxd"]
 [ext_resource type="Texture2D" uid="uid://l0kbtiv50wbv" path="res://textures/Coal Sprite.png" id="3_i2xqx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrht3"]
