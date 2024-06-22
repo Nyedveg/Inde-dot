@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c0xyclknhdook"]
+
+[node name="GGrindingGame" type="Node"]
+
+[node name="Grindstone" type="ParallaxBackground" parent="."]
+
+[node name="ActiveGrindstoneSpot" type="Area2D" parent="."]
