@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://clfbciew27jue"]
+[gd_scene load_steps=6 format=3 uid="uid://daxk3182akb3a"]
 
 [ext_resource type="Script" path="res://scripts/f_coal_throwing_game.gd" id="1_k85fr"]
-[ext_resource type="PackedScene" path="res://scenes/coal.tscn" id="2_n4jxd"]
+[ext_resource type="PackedScene" uid="uid://cwgifrpiwcpmo" path="res://scenes/coal.tscn" id="2_n4jxd"]
 [ext_resource type="Texture2D" uid="uid://l0kbtiv50wbv" path="res://textures/Coal Sprite.png" id="3_i2xqx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrht3"]
@@ -9,9 +9,9 @@ radius = 181.025
 
 [sub_resource type="Curve2D" id="Curve2D_qdjk3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1486, 517, 0, 0, 0, 0, 1454, 552, 0, 0, 0, 0, 1426, 598, 0, 0, 0, 0, 1411, 641, 0, 0, 0, 0, 1409, 701, 0, 0, 0, 0, 1419, 755, 0, 0, 0, 0, 1444, 803)
+"points": PackedVector2Array(0, 0, 0, 0, 1486, 517, 0, 0, 0, 0, 1454, 552, 0, 0, 0, 0, 1426, 598, 0, 0, 0, 0, 1411, 641, 0, 0, 0, 0, 1409, 701, 0, 0, 0, 0, 1419, 755, 0, 0, 0, 0, 1444, 803, 0, 0, 0, 0, 1475, 829, 0, 0, 0, 0, 1501, 842)
 }
-point_count = 7
+point_count = 9
 
 [node name="FCoalThrowingGame" type="Node"]
 script = ExtResource("1_k85fr")
@@ -19,7 +19,8 @@ coal_scene = ExtResource("2_n4jxd")
 
 [node name="Forge" type="Area2D" parent="."]
 position = Vector2(330, 744)
-collision_mask = 0
+collision_layer = 3
+collision_mask = 3
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Forge"]
@@ -48,4 +49,8 @@ position = Vector2(1648, 811)
 [node name="ShootingPoint" type="Marker2D" parent="CoalBox"]
 position = Vector2(1648, 689)
 
+[node name="CoolDown" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="Forge" to="." method="_on_forge_body_entered"]
+[connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]
