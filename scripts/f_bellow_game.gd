@@ -50,10 +50,16 @@ func CheckIfHit():
 		misses+=1
 	$Cooldown.start()
 func show_evaluation():
-	
+	$FinishMinigameButton.visible = true
 	score = 10-misses
 	$Score.text = str(score)
 
 func _on_cooldown_timeout():
 	can_act = true
 	$ProgressBar/ProgressBarPoint/ProgressBarPointSprite.modulate = Color(255, 255, 255)
+
+
+func _on_finish_minigame_button_pressed():
+	get_parent().score += score
+	get_parent().current_task = 2
+	queue_free()

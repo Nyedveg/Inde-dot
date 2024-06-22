@@ -72,6 +72,7 @@ func show_evaluation():
 	var hit_rate = (20 * coals_hit) / shots_taken
 	score = round(hit_rate / 10)
 	$Score.text = str(score)
+	$FinishMinigameButton.visible = true
 
 func _on_cool_down_timeout():
 	can_shoot = true
@@ -80,3 +81,9 @@ func _on_cool_down_timeout():
 func _on_win_timer_timeout():
 	show_evaluation()
 	#VICTORY SOUND
+
+
+func _on_finish_minigame_button_pressed():
+	get_parent().score += score
+	get_parent().current_task = 1
+	queue_free()

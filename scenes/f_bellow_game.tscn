@@ -10,7 +10,8 @@ _data = {
 }
 point_count = 2
 
-[node name="FBellowGame" type="Node"]
+[node name="FBellowGame" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_wx747")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -51,4 +52,14 @@ offset_right = 1075.0
 offset_bottom = 657.0
 theme_override_font_sizes/font_size = 40
 
+[node name="FinishMinigameButton" type="Button" parent="."]
+visible = false
+offset_left = 93.0
+offset_top = 36.0
+offset_right = 124.0
+offset_bottom = 67.0
+scale = Vector2(15.0045, 16.1639)
+text = "OK"
+
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="pressed" from="FinishMinigameButton" to="." method="_on_finish_minigame_button_pressed"]
