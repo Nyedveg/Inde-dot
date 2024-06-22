@@ -5,3 +5,5 @@
 [node name="Grindstone" type="ParallaxBackground" parent="."]
 
 [node name="ActiveGrindstoneSpot" type="Area2D" parent="."]
+
+[node name="Item" type="Node" parent="."]
