@@ -60,6 +60,7 @@ func stop_charging():
 
 func _on_forge_body_entered(body):
 	body.queue_free()
+	#MAYBE SOUND??
 	progress += progress_per_coal
 	coals_hit += 1
 	if progress >= progress_needed:
@@ -76,3 +77,4 @@ func _on_cool_down_timeout():
 
 func _on_win_timer_timeout():
 	show_evaluation()
+	#VICTORY SOUND

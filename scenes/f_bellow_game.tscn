@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0wd8s320bnla"]
+
+[ext_resource type="Script" path="res://scripts/f_bellow_game.gd" id="1_wx747"]
+[ext_resource type="Texture2D" uid="uid://bd3hyqbxotim" path="res://textures/BlueBox.png" id="2_j6epk"]
+[ext_resource type="Texture2D" uid="uid://cta6rrtcrkiya" path="res://textures/RedBox.png" id="3_gyh1j"]
+
+[sub_resource type="Curve2D" id="Curve2D_amcb3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 512, 704, 0, 0, 0, 0, 1408, 704)
+}
+point_count = 2
+
+[node name="FBellowGame" type="Node"]
+script = ExtResource("1_wx747")
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="Bellows" type="AnimatedSprite2D" parent="."]
+
+[node name="ProgressBar" type="Path2D" parent="."]
+curve = SubResource("Curve2D_amcb3")
+
+[node name="ProgressBarSprite" type="Sprite2D" parent="ProgressBar"]
+
+[node name="BlueBox" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(960, 704)
+scale = Vector2(34.4615, 1.28)
+texture = ExtResource("2_j6epk")
+
+[node name="HitMarker" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(960, 704)
+scale = Vector2(34.4615, 1.28)
+texture = ExtResource("3_gyh1j")
+
+[node name="ProgressBarPoint" type="PathFollow2D" parent="ProgressBar"]
+position = Vector2(512, 704)
+
+[node name="ProgressBarPointSprite" type="Sprite2D" parent="ProgressBar/ProgressBarPoint"]
+position = Vector2(2.86102e-06, -2.86102e-06)
+scale = Vector2(0.615386, 2.56)
+texture = ExtResource("2_j6epk")
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 810.0
+offset_top = 461.0
+offset_right = 1075.0
+offset_bottom = 657.0
+theme_override_font_sizes/font_size = 40
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
