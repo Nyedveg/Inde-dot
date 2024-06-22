@@ -1,9 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxql12pliymew"]
-
-[ext_resource type="Script" path="res://scenes/w_quenching_game.gd" id="1_63hmh"]
+[gd_scene format=3 uid="uid://dxql12pliymew"]
 
 [node name="WQuenchingGame" type="Node"]
-script = ExtResource("1_63hmh")
 
 [node name="Forge" type="Sprite2D" parent="."]
 

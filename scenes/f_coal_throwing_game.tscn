@@ -13,7 +13,8 @@ _data = {
 }
 point_count = 9
 
-[node name="FCoalThrowingGame" type="Node"]
+[node name="FCoalThrowingGame" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_k85fr")
 coal_scene = ExtResource("2_n4jxd")
 
@@ -68,6 +69,16 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 40
 
+[node name="FinishMinigameButton" type="Button" parent="."]
+visible = false
+offset_left = 93.0
+offset_top = 36.0
+offset_right = 124.0
+offset_bottom = 67.0
+scale = Vector2(15.0045, 16.1639)
+text = "OK"
+
 [connection signal="body_entered" from="Forge" to="." method="_on_forge_body_entered"]
 [connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]
 [connection signal="timeout" from="WinTimer" to="." method="_on_win_timer_timeout"]
+[connection signal="pressed" from="FinishMinigameButton" to="." method="_on_finish_minigame_button_pressed"]
