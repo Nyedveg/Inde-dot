@@ -52,5 +52,22 @@ position = Vector2(1648, 689)
 [node name="CoolDown" type="Timer" parent="."]
 one_shot = true
 
+[node name="WinTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 810.0
+offset_top = 461.0
+offset_right = 1075.0
+offset_bottom = 657.0
+theme_override_font_sizes/font_size = 40
+
+[node name="Hits" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 40
+
 [connection signal="body_entered" from="Forge" to="." method="_on_forge_body_entered"]
 [connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]
+[connection signal="timeout" from="WinTimer" to="." method="_on_win_timer_timeout"]
