@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d5bf86htk3d0"]
+
+[ext_resource type="Script" path="res://scripts/spot_to_hit.gd" id="1_myopw"]
+[ext_resource type="Texture2D" uid="uid://l0kbtiv50wbv" path="res://textures/Coal Sprite.png" id="2_o315i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qejag"]
+radius = 40.0
+
+[node name="SpotToHit" type="Area2D"]
+script = ExtResource("1_myopw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qejag")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_o315i")
+
+[node name="ExistenceTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="ExistenceTimer" to="." method="_on_existence_timer_timeout"]

@@ -2,6 +2,8 @@ extends Node
 
 @export var coal_scene: PackedScene
 
+var score
+
 var progress_needed = 100
 var progress_per_coal = 5
 var progress = 0
@@ -68,7 +70,7 @@ func _on_forge_body_entered(body):
 		game_ended = true
 func show_evaluation():
 	var hit_rate = (20 * coals_hit) / shots_taken
-	var score = round(hit_rate / 10)
+	score = round(hit_rate / 10)
 	$Score.text = str(score)
 
 func _on_cool_down_timeout():
