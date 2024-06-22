@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://caksgugdxaoab"]
+[gd_scene load_steps=2 format=3 uid="uid://caksgugdxaoab"]
+
+[ext_resource type="Texture2D" uid="uid://g6x74n4o48lu" path="res://UI/Logo_Complete.png" id="1_1ye5t"]
 
 [node name="Main_Menu" type="Node"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -465.5
+offset_right = 465.5
+offset_bottom = 202.0
+grow_horizontal = 2
+texture = ExtResource("1_1ye5t")
+expand_mode = 1
+stretch_mode = 4
