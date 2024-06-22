@@ -4,7 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://c63edq3mk03i8" path="res://UI/EmptyButton_StyleBox.tres" id="2_jc235"]
 
 [resource]
-default_font_size = 20
+default_font_size = 25
 Button/colors/font_color = Color(1, 0.933333, 0.698039, 1)
 Button/colors/font_disabled_color = Color(1, 0.901508, 0.552059, 1)
 Button/colors/font_focus_color = Color(1, 1, 1, 1)
@@ -36,7 +36,7 @@ Label/constants/outline_size = 0
 Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 0
 Label/constants/shadow_outline_size = 0
-Label/font_sizes/font_size = 20
+Label/font_sizes/font_size = 25
 Label/fonts/font = ExtResource("1_84583")
 Label/styles/normal = null
 LinkButton/colors/font_color = Color(1, 1, 1, 1)
