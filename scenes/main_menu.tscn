@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://g6x74n4o48lu" path="res://UI/Logo_Complete.png" id="1_1ye5t"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_k1at6"]
-[ext_resource type="Texture2D" uid="uid://b40w0pdjkc6hr" path="res://textures/BG_MainMenu_colored.png" id="1_k6nut"]
 [ext_resource type="Theme" uid="uid://djnpr5c0crs32" path="res://UI/Main_Theme.tres" id="2_8o507"]
+[ext_resource type="Texture2D" uid="uid://7jdx1cpule5q" path="res://textures/BG_MainMenu_V3.png" id="2_tbw8o"]
 [ext_resource type="Texture2D" uid="uid://ceclvba8g6ajx" path="res://textures/Board.png" id="3_21kp2"]
 [ext_resource type="AudioStream" uid="uid://bqip1dumwtu3u" path="res://sounds/Title_screen_music_vox.wav" id="5_u4kc3"]
 
@@ -31,7 +31,7 @@ offset_right = 962.0
 offset_bottom = 542.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_k6nut")
+texture = ExtResource("2_tbw8o")
 expand_mode = 1
 
 [node name="Logo" type="TextureRect" parent="UI"]
