@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_acw1l"]
 [ext_resource type="PackedScene" uid="uid://daxk3182akb3a" path="res://scenes/f_coal_throwing_game.tscn" id="2_2rtks"]
 [ext_resource type="PackedScene" uid="uid://b0wd8s320bnla" path="res://scenes/f_bellow_game.tscn" id="3_fuxdg"]
-[ext_resource type="PackedScene" uid="uid://bulurtr5a75gs" path="res://scenes/a_forming_game.tscn" id="4_rt8x4"]
+[ext_resource type="PackedScene" path="res://scenes/a_forming_game.tscn" id="4_rt8x4"]
 [ext_resource type="PackedScene" uid="uid://dxql12pliymew" path="res://scenes/w_quenching_game.tscn" id="5_0b5v7"]
 [ext_resource type="PackedScene" uid="uid://c0xyclknhdook" path="res://scenes/g_grinding_game.tscn" id="6_fjus3"]
 
