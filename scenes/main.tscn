@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bos0hklawig7p"]
+[gd_scene load_steps=15 format=3 uid="uid://bos0hklawig7p"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_acw1l"]
 [ext_resource type="PackedScene" uid="uid://daxk3182akb3a" path="res://scenes/f_coal_throwing_game.tscn" id="2_2rtks"]
@@ -9,6 +9,22 @@
 [ext_resource type="Texture2D" uid="uid://cvgtq45g2fumt" path="res://textures/Blacksmith_unlit.png" id="7_hugcx"]
 [ext_resource type="AudioStream" uid="uid://dencc2kmp1ilw" path="res://sounds/Wind_ambience.mp3" id="8_wicyt"]
 [ext_resource type="AudioStream" uid="uid://bvw6xe1ndqge7" path="res://sounds/Fire_ambience.mp3" id="9_3rhf7"]
+[ext_resource type="AudioStream" uid="uid://crxwqammekdbv" path="res://sounds/Metal1_SFX.mp3" id="10_2rol0"]
+[ext_resource type="AudioStream" uid="uid://djnihwi3ye2gk" path="res://sounds/Metal2_SFX.mp3" id="11_canjb"]
+[ext_resource type="AudioStream" uid="uid://lgr63ohol76o" path="res://sounds/Metal3_SFX.mp3" id="12_xupak"]
+[ext_resource type="AudioStream" uid="uid://b2tclo8rkldi3" path="res://sounds/Metal4_SFX.mp3" id="13_4ciod"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uo38s"]
+playback_mode = 1
+streams_count = 4
+stream_0/stream = ExtResource("10_2rol0")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("11_canjb")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("12_xupak")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("13_4ciod")
+stream_3/weight = 1.0
 
 [node name="Main" type="Node"]
 script = ExtResource("1_acw1l")
@@ -152,6 +168,10 @@ bus = &"Music"
 stream = ExtResource("9_3rhf7")
 volume_db = -5.0
 bus = &"Music"
+
+[node name="MenuSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_uo38s")
+bus = &"SFX"
 
 [connection signal="pressed" from="WiseManUI/SpearButton" to="." method="_on_spear_button_pressed"]
 [connection signal="pressed" from="WiseManUI/GladiusButton" to="." method="_on_gladius_button_pressed"]

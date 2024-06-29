@@ -1,5 +1,7 @@
 extends Node
 
+@onready var menu_sfx = $MenuSFX
+
 @export var firstGame_scene: PackedScene
 @export var secondGame_scene: PackedScene
 @export var thirdGame_scene: PackedScene
@@ -39,35 +41,44 @@ func _on_axe_button_pressed():
 
 
 func _on_shovel_pressed():
+	button_interact()
 	if current_task == 0:
 		#Bellow outline
 		add_child(firstGame_scene.instantiate())
 
 
 func _on_bellow_pressed():
+	button_interact()
 	if current_task == 1:
 		#Hammer outline
 		add_child(secondGame_scene.instantiate())
 
 
 func _on_hammer_pressed():
+	button_interact()
 	if current_task == 2:
 		#Prongs outline
 		add_child(thirdGame_scene.instantiate())
 
 
 func _on_prongs_pressed():
+	button_interact()
 	if current_task == 3:
 		#Grindstone outline
 		add_child(fourthGame_scene.instantiate())
 
 
 func _on_grindstone_pressed():
+	button_interact()
 	if current_task == 4:
 		#Table outline
 		add_child(fifthGame_scene.instantiate())
 
 
 func _on_table_pressed():
+	button_interact()
 	if current_task == 5:
 		add_child(sixthGame_scene.instantiate())
+
+func button_interact():
+	menu_sfx.play()
