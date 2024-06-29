@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bos0hklawig7p"]
+[gd_scene load_steps=10 format=3 uid="uid://bos0hklawig7p"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_acw1l"]
 [ext_resource type="PackedScene" uid="uid://daxk3182akb3a" path="res://scenes/f_coal_throwing_game.tscn" id="2_2rtks"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dxql12pliymew" path="res://scenes/w_quenching_game.tscn" id="5_0b5v7"]
 [ext_resource type="PackedScene" uid="uid://c0xyclknhdook" path="res://scenes/g_grinding_game.tscn" id="6_fjus3"]
 [ext_resource type="Texture2D" uid="uid://cvgtq45g2fumt" path="res://textures/Blacksmith_unlit.png" id="7_hugcx"]
+[ext_resource type="AudioStream" uid="uid://dencc2kmp1ilw" path="res://sounds/Wind_ambience.mp3" id="8_wicyt"]
+[ext_resource type="AudioStream" uid="uid://bvw6xe1ndqge7" path="res://sounds/Fire_ambience.mp3" id="9_3rhf7"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_acw1l")
@@ -126,10 +128,10 @@ offset_bottom = 183.0
 scale = Vector2(14.0482, 16.6054)
 
 [node name="Grindstone" type="Button" parent="Smithy/Tools"]
-offset_left = 1220.0
-offset_top = 800.0
-offset_right = 1228.0
-offset_bottom = 808.0
+offset_left = 1326.0
+offset_top = 855.0
+offset_right = 1334.0
+offset_bottom = 863.0
 scale = Vector2(22.6996, -22.026)
 
 [node name="Table" type="Button" parent="Smithy/Tools"]
@@ -138,6 +140,18 @@ offset_top = 610.0
 offset_right = 1586.0
 offset_bottom = 618.0
 scale = Vector2(26.7697, -20.5392)
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wicyt")
+volume_db = -10.0
+autoplay = true
+max_polyphony = 3
+bus = &"Music"
+
+[node name="Fire ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_3rhf7")
+volume_db = -5.0
+bus = &"Music"
 
 [connection signal="pressed" from="WiseManUI/SpearButton" to="." method="_on_spear_button_pressed"]
 [connection signal="pressed" from="WiseManUI/GladiusButton" to="." method="_on_gladius_button_pressed"]

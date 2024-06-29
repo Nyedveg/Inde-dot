@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://caksgugdxaoab"]
+[gd_scene load_steps=8 format=3 uid="uid://caksgugdxaoab"]
 
 [ext_resource type="Texture2D" uid="uid://g6x74n4o48lu" path="res://UI/Logo_Complete.png" id="1_1ye5t"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_k1at6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7jdx1cpule5q" path="res://textures/BG_MainMenu_V3.png" id="2_tbw8o"]
 [ext_resource type="Texture2D" uid="uid://ceclvba8g6ajx" path="res://textures/Board.png" id="3_21kp2"]
 [ext_resource type="AudioStream" uid="uid://bqip1dumwtu3u" path="res://sounds/Title_screen_music_vox.wav" id="5_u4kc3"]
+[ext_resource type="AudioStream" uid="uid://65l3ue4kx1do" path="res://sounds/Saw_SFX.mp3" id="7_5mg66"]
 
 [node name="Main_Menu" type="Node"]
 script = ExtResource("1_k1at6")
@@ -170,9 +171,26 @@ theme = ExtResource("2_8o507")
 text = "Martynas Garlauskas"
 uri = "https://www.linkedin.com/in/martynas-garlauskas-5127692b0/"
 
+[node name="Transition" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 1922.0
+offset_bottom = 1082.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_u4kc3")
 autoplay = true
+max_polyphony = 3
+bus = &"Music"
+
+[node name="MenuSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5mg66")
+max_polyphony = 3
+bus = &"SFX"
 
 [connection signal="pressed" from="UI/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="UI/ExitButton" to="." method="_on_exit_button_pressed"]
