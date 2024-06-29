@@ -17,7 +17,7 @@ func _ready():
 	#Outline for shovel
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Leaving the game with 'ESC'
 func _process(delta):
 	if Input.is_action_pressed("exit"):
 		get_tree().quit()
