@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Metal2_SFX.mp3-5175d57d67f472b9e1252992b7fddb
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

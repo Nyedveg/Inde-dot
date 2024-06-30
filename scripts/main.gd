@@ -44,6 +44,7 @@ func _on_shovel_pressed():
 	button_interact()
 	if current_task == 0:
 		#Bellow outline
+		#Change scene texture to the lit one after this is done, ty
 		add_child(firstGame_scene.instantiate())
 
 
